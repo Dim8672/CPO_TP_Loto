@@ -25,15 +25,18 @@ public class Card {
         boolean lineQuine = false;
         int line = 0;
         List<Integer> listNumbers = loto.getPulledNumbers();
+        Integer nb;
 
         do {
             for (int j = 0; j < 5; j++) {
-                
-                for (Integer nb = 0; nb < listNumbers.size(); nb++){
-                   // TESTER SI IF nb = contents[line][j];
-                }
-                
-
+                nb = 0;
+                do {
+                    if (listNumbers.get(nb) == contents[line][j]) {
+                        count = count++;
+                    }
+                    nb = nb++;
+                } while (nb < listNumbers.size()
+                        && listNumbers.get(nb - 1) != contents[line][j]);
                 if (count == 5) {
                     lineQuine = true;
                 }
