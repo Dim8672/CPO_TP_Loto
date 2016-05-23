@@ -44,6 +44,11 @@ public class Loto {
     }
 
     public boolean cardExist(Integer cardNumber) {
-        return true;
+        for (int i=0;i<cardsList.size();i++){
+            if(cardsList.get(i).getNumber()== cardNumber){
+                return true;
+            }
+        }
+        return false;
     }
 }
