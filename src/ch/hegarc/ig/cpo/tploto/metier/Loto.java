@@ -17,17 +17,13 @@ public class Loto {
         Card card = new Card();
         boolean quine = false;
         
-        if (CarteExist(cardNumber)) {
+        if (CardExist(cardNumber)) {
             card = getCardByNumber(cardNumber);
             quine = card.checkLignes();
         }
         
         return quine;
     }
-    
-//    private Carte getCarteByNumber(Integer numero){
-//        
-//    }
 
     public List<Integer> getNombresTires() {
         return nombresTires;
