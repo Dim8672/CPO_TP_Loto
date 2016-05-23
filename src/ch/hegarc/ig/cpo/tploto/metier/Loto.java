@@ -13,11 +13,16 @@ public class Loto {
     public Loto() {
     }
     
-    public boolean ControlerQuine(Integer cardNumber){
+    public boolean ControlQuine(Integer cardNumber){
         Card card = new Card();
-        if (card = this.getCardByNumber(cardNumber)) {
-            
+        boolean quine = false;
+        
+        if (CarteExist(cardNumber)) {
+            card = getCardByNumber(cardNumber);
+            quine = card.checkLignes();
         }
+        
+        return quine;
     }
     
 //    private Carte getCarteByNumber(Integer numero){
@@ -36,6 +41,10 @@ public class Loto {
             }
         }
         return false;
+    }
+    
+    public Card getCardByNumber(Integer cardNumber) {
+        return null;
     }
     
     
