@@ -10,6 +10,6 @@ public class Console {
     }
     
     public void AfficheMessage(String message){
-        
+        System.out.println(message);
     }
 }
