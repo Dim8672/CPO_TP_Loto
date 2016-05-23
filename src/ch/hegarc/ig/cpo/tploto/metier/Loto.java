@@ -14,14 +14,27 @@ public class Loto {
     public Loto() {
     }
 
+
     public boolean controlerQuine(Integer cardNumber) {
         Card card = new Card();
         if (card = this.getCardByNumber(cardNumber)) {
 
+
+    
+    public boolean ControlQuine(Integer cardNumber){
+        Card card = new Card();
+        boolean quine = false;
+        
+        if (CarteExist(cardNumber)) {
+            card = getCardByNumber(cardNumber);
+            quine = card.checkLignes();
+
         }
+        
+        return quine;
     }
 
-    private Card getCarteByNumber(Integer numero) {
+    private Card getCardByNumber(Integer numero) {
         int cardNumber = 0;
         if (carteExist(numero)) {
             for (int i = 0; i < cardsList.size(); i++) {
@@ -40,5 +53,4 @@ public class Loto {
     public boolean carteExist(Integer numeroCarte) {
         return true;
     }
-
 }
