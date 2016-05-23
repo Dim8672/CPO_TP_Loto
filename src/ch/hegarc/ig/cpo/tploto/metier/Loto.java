@@ -28,10 +28,10 @@ public class Loto {
         return nombresTires;
     }
     
-    public boolean CardExist(Integer  numeroCarte){
+    public boolean CardExist(Integer  cardNumber){
         
         for (int i=0;i<cardsList.size();i++){
-            if(cardsList.get(i).getNumero() == numeroCarte){
+            if(cardsList.get(i).getNumero() == cardNumber){
                 return true;
             }
         }
