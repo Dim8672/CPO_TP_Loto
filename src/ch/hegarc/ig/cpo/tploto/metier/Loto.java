@@ -28,15 +28,14 @@ public class Loto {
     }
 
     private Card getCardByNumber(Integer cardNumber) {
-        int number = 0;
         if (cardExist(cardNumber)) {
             for (int i = 0; i < cardsList.size(); i++) {
                 if (cardsList.get(i).getNumber() == cardNumber) {
-                    number = i;
+                    return cardsList.get(i);
                 }
             }
         }
-        return cardsList.get(number);
+        return null;
     }
 
     public List<Integer> getPulledNumbers() {
