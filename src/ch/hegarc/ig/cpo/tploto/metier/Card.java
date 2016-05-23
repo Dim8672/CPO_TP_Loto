@@ -4,12 +4,12 @@ package ch.hegarc.ig.cpo.tploto.metier;
  *
  * Auteur : Dario, Dimitri, Dylan, Sébastien
  */
-public class Carte {
+public class Card {
     
     private Integer numero;
     private Integer[][] contenu;
 
-    public Carte() {
+    public Card() {
     }
 
     public Integer getNumero() {
