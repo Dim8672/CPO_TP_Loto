@@ -6,17 +6,17 @@ package ch.hegarc.ig.cpo.tploto.metier;
  */
 public class Card {
     
-    private Integer numero;
-    private Integer[][] contenu;
+    private Integer number;
+    private Integer[][] contents;
 
     public Card() {
     }
 
-    public Integer getNumero() {
-        return numero;
+    public Integer getNumber() {
+        return number;
     }
     
-    protected boolean checkLignes(){
+    protected boolean checkLines(){
         return true;
     }
     
