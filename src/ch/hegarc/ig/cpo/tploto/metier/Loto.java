@@ -8,12 +8,16 @@ import java.util.List;
  */
 public class Loto {
     private List<Integer> nombresTires;
+    private List<Card> cardsList; 
 
     public Loto() {
     }
     
-    public boolean ControlerQuine(Integer numeroCarte){
-        return true;
+    public boolean ControlerQuine(Integer cardNumber){
+        Card card = new Card();
+        if (card = this.getCardByNumber(cardNumber)) {
+            
+        }
     }
     
 //    private Carte getCarteByNumber(Integer numero){
