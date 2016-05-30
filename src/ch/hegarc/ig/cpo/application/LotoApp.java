@@ -14,13 +14,13 @@ public class LotoApp {
     
     public void run() {
         Console view = new Console();
-        Loto jeu = Loto.newInstance();
-        jeu.newGame();
+        Loto game = Loto.newInstance();
+        game.newGame();
         
         for (int ind = 1; ind <= 5; ind++) {
             view.showMessage("Carte N° " + ind + ": ");
             view.showMessage("---------");
-            view.showCard(jeu.getCardByNumber(ind));
+            view.showCard(game.getCardByNumber(ind));
             view.showMessage("_________________");
         }
         
@@ -28,17 +28,17 @@ public class LotoApp {
         do {
             number = view.insertNumber();
             if (number == 99) {
-                if (jeu.controlQuine(view.cardNumber())) {
+                if (game.controlQuine(view.cardNumber())) {
                     view.showMessage("Quine OK!");
-                    jeu.stopGame();
+                    game.stopGame();
                 } else {
-                    view.showMessage("La quine n'est pas correcte! Le jeu continue...");
+                    view.showMessage("La quine n'est pas correcte! Le game continue...");
                 }
-            } else if (!jeu.getPulledNumbers().add(number)) {
+            } else if (!game.getPulledNumbers().add(number)) {
                 view.showMessage("Erreur: vous avez saisi deux fois le même chiffre.");
             }
             
-        } while (jeu.gameOnRun());
+        } while (game.gameOnRun());
         
     }
     
