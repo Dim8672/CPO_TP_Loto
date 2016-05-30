@@ -17,13 +17,24 @@ public class LotoApp {
     public void run(){
         Console vue = new Console();
         Loto jeu = new Loto();
+        jeu.newGame();
+        Integer number;
+        do {
+            number = vue.insertNumber();
+            if(number == 99){
+                if (jeu.controlQuine(vue.cardNumber())) {
+                    jeu.stopGame();
+                }
+            } else {
+                jeu.getPulledNumbers().add(number);
+            }
+            
+        } while(jeu.gameOnRun());
         
     }
     
     public static void main(String[] args) {
         new LotoApp().run();
     }
-    //HELLO DARIO
-    //HELLO DYLAN
-    //Hello SEB
+
 }

@@ -1,6 +1,10 @@
 package ch.hegarc.ig.cpo.tploto.metier;
 
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Random;
+import java.util.Set;
 
 /**
  *
@@ -8,10 +12,25 @@ import java.util.List;
  */
 public class Loto {
 
-    private List<Integer> pulledNumbers;
+    private Set<Integer> pulledNumbers;
     private List<Card> cardsList;
+    private Boolean isGaming;
 
     public Loto() {
+    }
+    
+    public void newGame(){
+       pulledNumbers = new HashSet<Integer>();
+       cardsList = new ArrayList();
+       isGaming = true;
+    }
+    
+    public void stopGame(){
+        isGaming = false;
+    }
+    
+    public boolean gameOnRun(){
+        return isGaming;
     }
 
     public boolean controlQuine(Integer cardNumber) {
@@ -38,11 +57,11 @@ public class Loto {
         return null;
     }
 
-    public List<Integer> getPulledNumbers() {
+    public Set<Integer> getPulledNumbers() {
         return pulledNumbers;
     }
 
-    public boolean cardExist(Integer cardNumber) {
+    private boolean cardExist(Integer cardNumber) {
         for (int i=0;i<cardsList.size();i++){
             if(cardsList.get(i).getNumber()== cardNumber){
                 return true;

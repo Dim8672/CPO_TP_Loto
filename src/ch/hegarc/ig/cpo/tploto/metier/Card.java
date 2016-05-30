@@ -1,6 +1,8 @@
 package ch.hegarc.ig.cpo.tploto.metier;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 /**
  *
@@ -19,12 +21,19 @@ public class Card {
     public Integer getNumber() {
         return number;
     }
-
+    public void setNumber(Integer value){
+        this.number = value;
+    }
+    
+    public Integer[][] getContents(){
+        return contents;
+    }
     protected boolean checkLines() {
         int count = 0;
         boolean lineQuine = false;
         int line = 0;
-        List<Integer> listNumbers = loto.getPulledNumbers();
+        List<Integer> listNumbers = new ArrayList();
+        listNumbers.addAll(loto.getPulledNumbers());
         Integer nb;
 
         do {
