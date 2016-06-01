@@ -16,6 +16,7 @@ public class LotoApp {
         Console view = new Console();
         Loto game = Loto.newInstance();
         game.newGame();
+        Integer number;
         
         for (int ind = 1; ind <= 5; ind++) {
             view.showMessage("Carte N° " + ind + ": ");
@@ -23,8 +24,7 @@ public class LotoApp {
             view.showCard(game.getCardByNumber(ind));
             view.showMessage("_________________");
         }
-        
-        Integer number;
+               
         do {
             number = view.insertNumber();
             if (number == 99) {

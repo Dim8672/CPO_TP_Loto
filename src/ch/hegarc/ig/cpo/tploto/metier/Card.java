@@ -24,12 +24,13 @@ public class Card {
 
     private void populateCard() {
         Random r = new Random();
+        int ind = 0;
         Set<Integer> cardNumbers = new HashSet<>();
         List<Integer> cardNumbers2 = new ArrayList();
         do {
             cardNumbers.add(r.nextInt(91 - 1) + 1);
         } while (cardNumbers.size() < 15);
-        int ind = 0;
+        
         cardNumbers2.addAll(cardNumbers);
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 5; j++) {
